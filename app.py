@@ -1,4 +1,4 @@
- 
+from db import user
 
 class Menu():
     def main_menu(self):
@@ -7,9 +7,11 @@ class Menu():
             command = input("Enter (r) to register and (l) to login: ")
             print(command)
             if command == "r":
-                print("register")
+                self.register()
+                print("you have regisred! ", user)
             elif command == "l":
-                print("loging")
+                self.login()
+                print("you have loged in! ")
             elif command == "q":
                 print("quit the program")
                 command = "q"
@@ -18,15 +20,40 @@ class Menu():
                 
 
     def login(self):
-        pass
+        name = input("Enter your name: ")
+        password = input("Enter your password: ")
 
-    def register(self, name, password):
-        self.name = input("Enter your name: ")
-        self.password = input("Enter your password: ")
+        
+        new_user = {'name': name, 'password': password}
 
-        id = user_list() + 1
+        new_user[name][password] = name, password
 
-        user_list['id'] = user_list = {}
+        
+        print('new_user')
+
+        
+        
+
+        
+
+    def register(self):
+        name = input("Enter your name: ")
+        password = input("Enter your password: ")
+
+        new_user = {'name': name, 'password': password}
+        
+
+        id = len(user) + 1
+        
+
+        user[id] = new_user
+        
+
+        
+
+        
+
+         
         
       
 
