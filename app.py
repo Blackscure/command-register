@@ -8,7 +8,7 @@ class Menu():
             print(command)
             if command == "r":
                 self.register()
-                print("you have regisred! ", user)
+                print("you have regisred! ")
             elif command == "l":
                 self.login()
                 print("you have loged in! ")
@@ -32,10 +32,6 @@ class Menu():
         print('new_user')
 
         
-        
-
-        
-
     def register(self):
         name = input("Enter your name: ")
         password = input("Enter your password: ")
