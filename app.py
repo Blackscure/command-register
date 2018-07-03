@@ -7,10 +7,10 @@ class Menu():
             command = input("Enter (r) to register and (l) to login: ")
             if command == "r":
                 self.register()
-            elif command == "l":
+            elif command == "l":  
                 self.login()
 
-                self.validation()   
+               
                 
             elif command == "q":
                 print("quit the program")
@@ -37,26 +37,28 @@ class Menu():
         name = input("Enter your name: ")
         password = input("Enter your password: ")
 
+        self.validation(name, password)
+
         print(users)
         for user in users:
-            if name == users[user]['name'] and password == users[user]['name']:
+            if name == users[user]['name'] and password == users[user]['password']:
                 print("you are clear to login.")
                 return
 
         print('You have not registered or your password does not match')
         return
 
-    def validation(self):
-        name = 'name'
-        password = 'password'
+    def validation(self, name, password):
+        self.name = name
+        self.password = password
         if name == name:
-            print('username matched!!')
-        else:
-            print("username unmatcced")
+            print("checked")
         if password == password:
-            print('password matched!!')
-        else:
-            print('password matched!!')
+            print("password checked!")
+
+
+
+        
              
          
 
