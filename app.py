@@ -1,37 +1,24 @@
-from db import user
+from db import users
 
 class Menu():
     def main_menu(self):
         command = ""
         while command != "q":
             command = input("Enter (r) to register and (l) to login: ")
-            print(command)
             if command == "r":
                 self.register()
-                print("you have regisred! ")
             elif command == "l":
                 self.login()
-                print("you have loged in! ")
+
+                self.validation()   
+                
             elif command == "q":
                 print("quit the program")
                 command = "q"
             else:
                 print("command unavailable")
-                
 
-    def login(self):
-        name = input("Enter your name: ")
-        password = input("Enter your password: ")
-
-        
-        new_user = {'name': name, 'password': password}
-
-        new_user[name][password] = name, password
-
-        
-        print('new_user')
-
-        
+     
     def register(self):
         name = input("Enter your name: ")
         password = input("Enter your password: ")
@@ -39,10 +26,42 @@ class Menu():
         new_user = {'name': name, 'password': password}
         
 
-        id = len(user) + 1
+        id = len(users) + 1
         
 
-        user[id] = new_user
+        users[id] = new_user
+
+        
+
+    def login(self):
+        name = input("Enter your name: ")
+        password = input("Enter your password: ")
+
+        print(users)
+        for user in users:
+            if name == users[user]['name'] and password == users[user]['name']:
+                print("you are clear to login.")
+                return
+
+        print('You have not registered or your password does not match')
+        return
+
+    def validation(self):
+        name = 'name'
+        password = 'password'
+        if name == name:
+            print('username matched!!')
+        else:
+            print("username unmatcced")
+        if password == password:
+            print('password matched!!')
+        else:
+            print('password matched!!')
+             
+         
+
+        
+    
         
 
         
