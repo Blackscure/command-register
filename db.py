@@ -1,1 +1,1 @@
-user_list = {}
+users = {}

@@ -2,3 +2,4 @@ venv/
 .vscode
 pycache
 app.pyc
+__pycache__/
